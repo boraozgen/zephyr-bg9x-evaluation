@@ -1,0 +1,19 @@
+&usart1 {
+	status = "okay";
+	current-speed = <115200>;
+
+	/* UART Pin info. */
+	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+
+	label = "UART_1";
+
+	/* BG9x description. */
+	quectel_bg9x {
+		compatible = "quectel,bg9x";
+		label      = "quectel-bg9x";
+		status     = "okay";
+
+		mdm-power-gpios = <&gpiob 3 GPIO_ACTIVE_HIGH>;
+		mdm-reset-gpios = <&gpiob 3 GPIO_ACTIVE_HIGH>;
+	};
+};
